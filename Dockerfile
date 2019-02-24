@@ -4,6 +4,9 @@ FROM node:8
 # create app dir
 WORKDIR /usr/src/app
 
+# persistent storage
+ADD ./storage ./storage
+
 # add libs
 COPY package*.json ./
 RUN npm install 
