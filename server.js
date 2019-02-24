@@ -12,6 +12,8 @@ const apiUrl = "http://api.nilu.no";
 
 // storage / persistence
 function storeRes(response){
+    // util.inspect is a hack, should write one json per line. Ran into
+    // serialization issues.
    fs.appendFile('storage/db', util.inspect(response), (err) => {  
        if (err) throw err;
    });
